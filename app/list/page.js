@@ -1,13 +1,20 @@
 export default function List() {
-    return (
+    
+  let products = ['Tomatoes','Pasta','Coconut']
+  
+  return (
       <div>
-        <h2>Products</h2>
-        <div className="food">
-          <h4>상품명 $40</h4>
-        </div>
-        <div className="food">
-          <h4>상품명 $40</h4>
-        </div>
+        <h4>Products</h4>
+          {
+            products.map((product, i)=> {
+              return (
+                <div className="food" key={i}>
+                  <img src={`/food${i}.png`} alt={product} className="food-img"/>
+                  <h4>{product} $40</h4>
+                </div>
+              )
+            })
+          }
       </div>
     )
   }
